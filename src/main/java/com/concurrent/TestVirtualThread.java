@@ -6,6 +6,10 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 @Slf4j
+
+/**
+ *  executor.close();会等待协程任务执行完成，如果不调用close()方法，那么如果jvm没有常驻用户线程，那么jvm就会结束进程
+ */
 public class TestVirtualThread {
     public static void main(String[] args) {
         ExecutorService es = Executors.newVirtualThreadPerTaskExecutor();
